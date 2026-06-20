@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import VideoHero from "./components/VideoHero";
 import Hero from "./components/Hero";
 import FeaturedLogos from "./components/FeaturedLogos";
 import Features from "./components/Features";
@@ -14,6 +15,7 @@ export default function App() {
     <div className="min-h-screen bg-[#F7F3EC] text-[#2B2420] antialiased">
       <Navbar />
       <main>
+        <VideoHero />
         <Hero />
         <FeaturedLogos />
         <Features />

@@ -1,6 +1,7 @@
-import image1 from "../images/image-1.jpg";
-import image2 from "../images/image-2.jpg";
-import image3 from "../images/image-3.jpg";
+import swissImg from "../images/Swiss_Modernism_brand_identity.jpeg";
+import techImg from "../images/Tech_unicorn_identity_design_study.jpeg";
+import heritageImg from "../images/Minimalist_seal_design_Heritage.jpeg";
+import americanRetailImg from "../images/American_Retail_Harvest.jpg";
 
 const collections = [
   {
@@ -8,27 +9,28 @@ const collections = [
     count: "412 logos",
     description: "Clean grids, Helvetica, and the power of negative space.",
     accent: "#2F4858",
-    image: image1,
+    image: swissImg,
   },
   {
     title: "American Retail",
     count: "1,204 logos",
     description: "Bold, optimistic marks from mid-century to today.",
     accent: "#C1652F",
-    image: image2,
+    image: americanRetailImg,
   },
   {
     title: "Tech Unicorns",
     count: "389 logos",
     description: "The visual identity of billion-dollar startups.",
     accent: "#8C7E72",
-    image: image3,
+    image: techImg,
   },
   {
     title: "Heritage Marks",
     count: "654 logos",
     description: "Logos that have endured decades without compromise.",
     accent: "#2B2420",
+    image: heritageImg,
   },
 ];
 
@@ -98,6 +100,8 @@ export default function Collections() {
                   <img 
                     src={col.image} 
                     alt={col.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />

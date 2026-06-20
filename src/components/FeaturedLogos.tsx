@@ -1,3 +1,10 @@
+import meridianImg from "../images/Meridian_Bank_wordmark_design.jpeg";
+import voltaImg from "../images/Volta_Energy_lettermark_design.jpeg";
+import arkadeImg from "../images/Arkade_Studio_brand_mark.jpeg";
+import pineridgeImg from "../images/Minimalist_retail_emblem_Pinerid.jpeg";
+import luminaryImg from "../images/Healthcare_combination_mark_Lumi.jpeg";
+import crestImg from "../images/Crest_Foods_wordmark_design.jpeg";
+
 const logos = [
   {
     brand: "Meridian Bank",
@@ -6,6 +13,7 @@ const logos = [
     year: "2022",
     color: "#2F4858",
     initial: "M",
+    image: meridianImg,
   },
   {
     brand: "Volta Energy",
@@ -14,6 +22,7 @@ const logos = [
     year: "2021",
     color: "#C1652F",
     initial: "V",
+    image: voltaImg,
   },
   {
     brand: "Arkade Studio",
@@ -22,6 +31,7 @@ const logos = [
     year: "2023",
     color: "#8C7E72",
     initial: "A",
+    image: arkadeImg,
   },
   {
     brand: "Pineridge Co.",
@@ -30,6 +40,7 @@ const logos = [
     year: "2020",
     color: "#2B2420",
     initial: "P",
+    image: pineridgeImg,
   },
   {
     brand: "Luminary Health",
@@ -38,6 +49,7 @@ const logos = [
     year: "2023",
     color: "#2F4858",
     initial: "L",
+    image: luminaryImg,
   },
   {
     brand: "Crest Foods",
@@ -46,6 +58,7 @@ const logos = [
     year: "2019",
     color: "#C1652F",
     initial: "C",
+    image: crestImg,
   },
 ];
 
@@ -128,6 +141,7 @@ function LogoCard({
   year,
   color,
   initial,
+  image,
 }: {
   brand: string;
   industry: string;
@@ -135,22 +149,33 @@ function LogoCard({
   year: string;
   color: string;
   initial: string;
+  image?: string;
 }) {
   return (
     <div className="group bg-[#F1EAE0] rounded-2xl border border-[#2B2420]/6 overflow-hidden hover:border-[#C1652F]/20 hover:shadow-md transition-all duration-300 cursor-pointer">
       {/* Logo display area */}
       <div className="aspect-[4/3] flex items-center justify-center relative overflow-hidden bg-[#F1EAE0]">
-        <div
-          className="w-16 h-16 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-          style={{ backgroundColor: color + "18" }}
-        >
-          <span
-            className="text-3xl font-bold tracking-tight"
-            style={{ color }}
+        {image ? (
+          <img 
+            src={image} 
+            alt={brand} 
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+          />
+        ) : (
+          <div
+            className="w-16 h-16 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+            style={{ backgroundColor: color + "18" }}
           >
-            {initial}
-          </span>
-        </div>
+            <span
+              className="text-3xl font-bold tracking-tight"
+              style={{ color }}
+            >
+              {initial}
+            </span>
+          </div>
+        )}
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-[#2B2420]/0 group-hover:bg-[#2B2420]/3 transition-all duration-300" />
         {/* Quick actions */}
@@ -189,7 +214,7 @@ function LogoCard({
       </div>
 
       {/* Card info */}
-      <div className="px-4 py-3 border-t border-[#2B2420]/6">
+      <div className="px-4 py-3 border-t border-[#2B2420]/6 bg-[#F1EAE0] relative z-10">
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0">
             <p className="text-sm font-semibold text-[#2B2420] truncate">

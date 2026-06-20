@@ -42,17 +42,17 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.map((t) => (
             <div
-              key={i}
+              key={t.name}
               className="flex flex-col p-6 bg-[#F1EAE0] rounded-2xl border border-[#2B2420]/6"
             >
               {/* Stars */}
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-6">
                 {Array.from({ length: 5 }).map((_, s) => (
                   <svg
-                    key={s}
+                    key={`star-${t.name}-${s}`}
                     className="w-4 h-4 text-[#C1652F]"
                     fill="currentColor"
                     viewBox="0 0 24 24"

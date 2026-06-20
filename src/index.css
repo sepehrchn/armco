@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #F7F3EC;
+  --color-brand-surface: #F1EAE0;
+  --color-brand-text: #2B2420;
+  --color-brand-muted: #8C7E72;
+  --color-brand-accent: #C1652F;
+  --color-brand-navy: #2F4858;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
